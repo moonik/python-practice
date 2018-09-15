@@ -9,7 +9,7 @@ class BinarySearch:
         high = len(self.values)
 
         while low <= high:
-            middle = (high + low) // 2
+            middle = (high + low) // 2  # // -> converts to int
 
             if self.values[middle] < key:
                 low = middle + 1
