@@ -1,5 +1,4 @@
 class BinarySearch:
-    values = []
 
     def __init__(self, values):
         self.values = values

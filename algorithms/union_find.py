@@ -1,9 +1,8 @@
 class UnionFind:
-    ids = []
-    values = []
-    weights = []
 
     def __init__(self, values):
+        self.ids = []
+        self.weights = []
         for i, v in enumerate(values):
             self.ids.append(v)
 
