@@ -1,4 +1,4 @@
-from .node import Node
+from data_structures.node import Node
 
 
 class LinkedStack:
@@ -10,6 +10,6 @@ class LinkedStack:
         self.last_ = Node(item, self.last_)
 
     def pop(self):
-        item = self.last_.get_data()
+        item = self.last_.get_item()
         self.last_ = self.last_.get_next()
         return item
