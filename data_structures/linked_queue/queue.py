@@ -7,13 +7,13 @@ class Queue:
         self.first = None
 
     def is_empty(self):
-        return self.last is None
+        return self.first is None
 
     def enqueue(self, item):
-        item = Node(item)
+        node = Node(item)
 
         if self.is_empty():
-            self.last = Node(item)
+            self.last = node
             self.first = self.last
         else:
             self.last.set_next(item)
@@ -22,4 +22,6 @@ class Queue:
     def dequeue(self):
         item = self.first.get_item()
         self.first = self.first.get_next()
+        if self.is_empty():
+            self.last = None
         return item
