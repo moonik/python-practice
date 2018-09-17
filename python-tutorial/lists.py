@@ -17,6 +17,9 @@ print("First item", list[0])
 
 print("From 1 to 3", list[1:3])
 
+list[2:] # from second index
+list[:2] # to second index
+
 anotherList = ["five", "six", "seven"]
 
 storage = [list, anotherList]  # [][]
