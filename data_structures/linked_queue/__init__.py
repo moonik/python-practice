@@ -2,14 +2,14 @@ from data_structures.linked_queue.queue import Queue
 
 
 def main():
-    stack = Queue()
+    queue = Queue()
 
-    assert stack.is_empty()
+    assert queue.is_empty()
 
-    stack.enqueue(1)
-    stack.enqueue(2)
+    queue.enqueue(1)
+    queue.enqueue(2)
 
-    print(stack.dequeue())
+    print(queue.dequeue())
 
 
 if __name__ == "__main__":
