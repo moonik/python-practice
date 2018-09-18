@@ -1,6 +1,7 @@
 class InsertionSort:
 
-    def sort(self, values):
+    @staticmethod
+    def sort(values):
         for i, v in enumerate(values):
             j = i
             while j > 0:
@@ -22,13 +23,13 @@ insertion = InsertionSort()
 
 insertion.sort(original)
 
-sorted = [
+sorted_ = [
     -2650, -170, -93, 3, 4, 9, 14, 42, 45, 99, 110,
     123, 184, 184, 221, 395, 597, 662, 824, 842, 989,
     2409, 3928, 5042, 7506, 7697, 45358, 189019, 325432, 547510
 ]
 
 for i, v in enumerate(original):
-    assert original[i] == sorted[i]
+    assert original[i] == sorted_[i]
 
 
