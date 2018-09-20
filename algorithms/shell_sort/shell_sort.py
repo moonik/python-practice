@@ -2,7 +2,7 @@ def sort(arr):
     h = 1
     n = len(arr)
 
-    while h < n/3:
+    while h < n//3:
         h = 3*h+1
 
     while h >= 1:
@@ -14,7 +14,7 @@ def sort(arr):
                     tmp = arr[j]
                     arr[j] = arr[j-h]
                     arr[j-h] = tmp
-                j -= 1
+                j -= h
             i += 1
         h //= 3
 
