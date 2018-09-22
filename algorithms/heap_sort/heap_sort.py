@@ -16,10 +16,10 @@ class HeapSort:
             self.__sink(values, 0, n)
 
     def __sink(self, values, k, n):
-        while 2*k <= n:
+        while 2*k < n:
             j = 2*k
 
-            if j < n and values[j] < values[j+1]:
+            if values[j] < values[j+1]:
                 j += 1
 
             if not values[k] < values[j]:

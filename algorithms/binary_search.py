@@ -16,6 +16,7 @@ class BinarySearch:
                 high = middle - 1
             else:
                 return middle
+        return -1
 
 
 values = [0, 1, 2, 3, 4, 5, 6]
