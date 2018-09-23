@@ -9,6 +9,8 @@ class InsertionSort:
                     tmp = values[j]
                     values[j] = values[j-1]
                     values[j-1] = tmp
+                else:
+                    break
                 j -= 1
 
 
