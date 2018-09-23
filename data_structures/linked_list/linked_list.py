@@ -36,7 +36,7 @@ class LinkedList:
 
         current = self.head
 
-        while current.next is not None:
+        while current is not None:
             if current.next.item == item:
                 current.next = current.next.next
                 if current.next is None:
@@ -48,7 +48,7 @@ class LinkedList:
 
     def get(self, item):
         current = self.head
-        while current.next is not None:
+        while current is not None:
             if current.item == item:
                 return item
             current = current.next
