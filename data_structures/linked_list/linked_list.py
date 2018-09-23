@@ -22,11 +22,15 @@ class LinkedList:
         else:
             self.tail.next = node
             self.tail = node
+
         self.size += 1
+        return True
 
     def delete(self, item):
         if self.head.item == item:
             self.head = self.head.next
+            if self.head.next is None:
+                self.tail = self.head
             self.size -= 1
             return True
 
@@ -35,6 +39,8 @@ class LinkedList:
         while current.next is not None:
             if current.next.item == item:
                 current.next = current.next.next
+                if current.next is None:
+                    self.tail = current
                 self.size -= 1
                 return True
             current = current.next

@@ -8,6 +8,7 @@ class LinkedStack:
 
     def push(self, item):
         self.last_ = Node(item, self.last_)
+        return True
 
     def pop(self):
         item = self.last_.get_item()

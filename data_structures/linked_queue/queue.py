@@ -18,6 +18,7 @@ class Queue:
         else:
             self.last.set_next(item)
             self.last = item
+        return True
 
     def dequeue(self):
         item = self.first.get_item()
