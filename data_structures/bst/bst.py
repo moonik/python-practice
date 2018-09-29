@@ -1,4 +1,5 @@
 from queue import Queue
+from data_structures.bst.node import Node
 
 
 class BST:
@@ -6,28 +7,20 @@ class BST:
     def __init__(self):
         self.root = None
 
-    class Node:
-        def __init__(self, key=None, value=None):
-            self.key = key
-            self.value = value
-            self.left = None
-            self.right = None
-            self.count = 0
-
     def put(self, key, value):
         self.root = self.__put(self.root, key, value)
 
     def __put(self, node, key, value):
         if node is None:
-            return BST.Node(key, value)
+            return Node(key, value)
 
         if key < node.key:
-            node = self.__put(node.left, key, value)
+            node.left = self.__put(node.left, key, value)
 
         elif key > node.key:
-            node = self.__put(node.right, key, value)
+            node.right = self.__put(node.right, key, value)
 
-        else:
+        elif key == node.key:
             node.value = value
 
         node.count = 1 + self.__size(node.left) + self.__size(node.right)
@@ -109,8 +102,24 @@ class BST:
         q.put(n.key)
         self.in_order(n.right, q)  # puts all from the left to the queue
 
+    def bsf(self, k):
+        que = Queue()
+        que.put(self.root)
+
+        while not que.empty():
+            node = que.get()
+            print(node.value)
+            if node.value == k:
+                return node
+            if node.left is not None:
+                que.put(node.left)
+            if node.right is not None:
+                que.put(node.right)
+        return None
+
 
 bst = BST()
-
-bst.put('first', 'f')
-print(bst.get('first'))
+items = [100, -99, 40, -32, 2, 0, 3, -4, 5, 4, -5]
+for i, v in enumerate(items):
+    bst.put(v, v)
+print(bst.bsf(-32))
