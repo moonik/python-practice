@@ -108,7 +108,6 @@ class BST:
 
         while not que.empty():
             node = que.get()
-            print(node.value)
             if node.value == k:
                 return node
             if node.left is not None:
@@ -117,9 +116,22 @@ class BST:
                 que.put(node.right)
         return None
 
+    def dsf(self, current, k):
+        if current is None:
+            return None
+
+        if current.value == k:
+            return current
+
+        n = self.dsf(current.left, k)
+        if n is None:
+            n = self.dsf(current.right, k)
+        return n
+
 
 bst = BST()
 items = [100, -99, 40, -32, 2, 0, 3, -4, 5, 4, -5]
 for i, v in enumerate(items):
     bst.put(v, v)
-print(bst.bsf(-32))
+print(bst.bsf(-5))
+print(bst.dsf(bst.root, -5))
